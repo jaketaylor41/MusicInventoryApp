@@ -1,4 +1,4 @@
-package controllers;
+package controller;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
@@ -18,6 +18,7 @@ public class AlbumController
 		FacesContext.getCurrentInstance().getExternalContext().getRequestMap().put("album", album);
 		
 		 // Call Music Manager Business Service
+        //  Discussion: Why is this a bad coding technique or how could this be improved? You covered this in CST-235 and CST-341!
         MusicManager mgr = new MusicManager();
         try
         {
@@ -25,7 +26,7 @@ public class AlbumController
         } 
         catch (TracksNotFoundException e)
         {
-            System.out.println("Album not found");
+            System.out.println("=================> Album not found");
         }
         
         // Forward to Test Response View along with the User Managed Bean

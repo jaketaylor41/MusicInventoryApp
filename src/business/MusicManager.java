@@ -24,25 +24,21 @@ public class MusicManager implements MusicManagerInterface {
 		// Initialize the Track Info
 		trackInfo = new HashMap<String, List<Track>>();
 		List<Track> tracks1 = new ArrayList<Track>();
-		tracks1.add(new Track("Taxman", 1));
-		tracks1.add(new Track("Eleanor Rigby", 2));
-		tracks1.add(new Track("I'm Only Sleeping", 3));
-		tracks1.add(new Track("Love You To", 4));
-		tracks1.add(new Track("Here, There and Everywhere", 5));
-		tracks1.add(new Track("Yellow Submarine", 6));
-		tracks1.add(new Track("She Said She Said", 7));
-		tracks1.add(new Track("Good Day Sunshine", 8));
-		tracks1.add(new Track("And Your Bird Can Sing", 9));
-		tracks1.add(new Track("For No One", 10));
-		tracks1.add(new Track("Doctor Robert", 11));
-		tracks1.add(new Track("I Want to Tell You", 12));
-		tracks1.add(new Track("Got to Get You into My Life", 13));
-		tracks1.add(new Track("Tomorrow Never Knows", 14));
-		trackInfo.put("The Beatles - Revolver - 1966", tracks1);
+		tracks1.add(new Track("More Than a Feeling", 1));
+		tracks1.add(new Track("Peace of Mind", 2));
+		tracks1.add(new Track("Foreplay / Long Time", 3));
+		tracks1.add(new Track("Rock & Roll Band", 4));
+		tracks1.add(new Track("Smokin'", 5));
+		tracks1.add(new Track("Hitch a Ride", 6));
+		tracks1.add(new Track("Something About You", 7));
+		tracks1.add(new Track("Let Me Take You Home Tonight", 8));
+		trackInfo.put("Boston - Boston - 1976", tracks1);
 	}
 
 	@Override
 	public Album addAlbum(Album album) {
+		// Discussion: How does the the MusicManager class and this method demonstrate
+		// the use of the Facade Design Pattern?
 
 		// Step 1: Get the Tracks for the specified Album
 		album.setTracks(getTracks(album));
@@ -52,7 +48,7 @@ public class MusicManager implements MusicManagerInterface {
 			throw new TracksNotFoundException();
 
 		// Step 3: Persist the Album in the database
-		// This will be activity 5 - Create a MySQL connection to add to DB
+		// TODO: will do this in a later In-Class Activity
 
 		// Return Album
 		return album;

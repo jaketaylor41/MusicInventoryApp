@@ -13,60 +13,79 @@ import javax.validation.constraints.Size;
 @ManagedBean
 @ViewScoped
 public class Album {
-	@NotNull(message = "Please enter an Album Title between 5 and 50 characters. This is a required field.")
-	@Size(min = 5, max = 50, message = "Please enter an Album Title between 5 and 50 characters. This is a required field.")
-	String title;
-
-	@NotNull(message = "Please enter an Album Artist between 5 and 25 characters. This is a required field.")
-	@Size(min = 5, max = 25, message = "Please enter an Album Artist between 5 and 25 characters. This is a required field.")
-	String artist;
-
-	@Min(value = 1920, message = "Please enter a year from 1920 to 2020. This is a required field.")
-	@Max(value = 2020, message = "Please enter a year from 1920 to 2020. This is a required field.")
-	int year;
-
-	List<Track> tracks;
-
-	public Album() {
-		title = "";
-		artist = "";
-		year = 0;
-		tracks = new ArrayList<Track>();
+	
+	@Size(min=5, max=50)
+	@NotNull
+	private String title;
+	
+	@Size(min=5, max=50)
+	@NotNull
+	private String artist;
+	
+	@Min(1920)
+	@Max(2020)
+	private int year;
+	
+	private List<Track> tracks;
+	
+	public Album()
+	{
+		this.title = "";
+		this.artist = "";
+		this.year = 0;
+		this.tracks = new ArrayList<Track>();
 	}
-
-	public String getTitle() {
+	
+	public Album(String title, String artist, int year, List<Track> tracks) 
+	{
+		this.title = title;
+		this.artist = artist;
+		this.year = year;
+		this.tracks = tracks;
+	} 
+	
+	public String getTitle() 
+	{
 		return title;
 	}
-
-	public void setTitle(String title) {
+	
+	public void setTitle(String title) 
+	{
 		this.title = title;
 	}
-
-	public String getArtist() {
+	
+	public String getArtist()
+	{
 		return artist;
 	}
-
-	public void setArtist(String artist) {
+	
+	public void setArtist(String artist) 
+	{
 		this.artist = artist;
 	}
-
-	public int getYear() {
+	
+	public int getYear() 
+	{
 		return year;
 	}
-
-	public void setYear(int year) {
+	
+	public void setYear(int year) 
+	{
 		this.year = year;
 	}
-
-	public int getNumberOfTracks() {
-		return tracks.size();
-	}
-
-	public List<Track> getTracks() {
+	
+	public List<Track> getTracks() 
+	{
 		return tracks;
 	}
-
-	public void setTracks(List<Track> tracks) {
+	
+	public void setTracks(List<Track> tracks) 
+	{
 		this.tracks = tracks;
+	}
+	
+	public int getNumberOfTracks()
+	{
+		return tracks.size();
 	}
 }
