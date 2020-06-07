@@ -18,7 +18,6 @@ public class AlbumController
 		FacesContext.getCurrentInstance().getExternalContext().getRequestMap().put("album", album);
 		
 		 // Call Music Manager Business Service
-        //  Discussion: Why is this a bad coding technique or how could this be improved? You covered this in CST-235 and CST-341!
         MusicManager mgr = new MusicManager();
         try
         {

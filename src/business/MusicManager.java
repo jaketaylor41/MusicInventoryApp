@@ -37,8 +37,6 @@ public class MusicManager implements MusicManagerInterface {
 
 	@Override
 	public Album addAlbum(Album album) {
-		// Discussion: How does the the MusicManager class and this method demonstrate
-		// the use of the Facade Design Pattern?
 
 		// Step 1: Get the Tracks for the specified Album
 		album.setTracks(getTracks(album));
@@ -48,7 +46,7 @@ public class MusicManager implements MusicManagerInterface {
 			throw new TracksNotFoundException();
 
 		// Step 3: Persist the Album in the database
-		// TODO: will do this in a later In-Class Activity
+		
 
 		// Return Album
 		return album;
