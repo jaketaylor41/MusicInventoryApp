@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+	<h:head>
+		<title>Assignment 4: Add Album Form</title>
+	</h:head> 
+	<body> 
+		<div align="center">
+		
+			<h:form>
+				<table style="text-align: center" class="index">
+					<tr>
+						<td><h1>Add Music Album</h1></td>
+					</tr>
+					<tr>
+						<td>Title: <h:inputText id="title" value="#{album.title}" title="" /> <h:message for="title" /></td>
+					</tr>
+					<tr>
+						<td>Artist: <h:inputText id="artist" value="#{album.artist}" title="" /> <h:message for="artist"/></td>
+					</tr>
+					<tr>
+						<td>Year: <h:inputText id="year" value="#{album.year}" minlength="4" title="" /> <h:message for="year" /></td>
+					</tr>
+					<tr>
+						<td><h:commandButton class="button" value="Submit" action="#{albumController.onSubmit(album)}"/></td>
+					</tr>
+				</table>
+			</h:form>
+		</div>
+	</body> 
+</html>
